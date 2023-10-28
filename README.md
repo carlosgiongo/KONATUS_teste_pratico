@@ -21,5 +21,4 @@ Projeto desenvolvido usando dependencias nucleo:
 * Material UI
 
 ### Video
-
-Video no próprio projeto, [https://calm-dolphin-66ff42.netlify.app](https://teste-konatus.carlosgiongo.com.br/)https://teste-konatus.carlosgiongo.com.br/video.mp4
+https://drive.google.com/file/d/18GNSP9p-OIW3Ncg3I_jIyM0jQxnzbiC_/view?usp=drive_link
