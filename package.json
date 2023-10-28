@@ -27,6 +27,7 @@
     "@mui/lab": "^5.0.0-alpha.150",
     "@mui/material": "^5.14.15",
     "@mui/x-charts": "^6.0.0-alpha.17",
+    "@netlify/plugin-nextjs": "^4.41.1",
     "chart.js": "^4.4.0",
     "leaflet": "^1.9.4",
     "mdi-material-ui": "^7.7.0",
