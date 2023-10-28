@@ -4,7 +4,7 @@ Teste técnico: Eleições
 
 ## Deploy do projeto
 
-Você pode acessar o projeto em https://calm-dolphin-66ff42.netlify.app/, ou iniciar o projeto localmente seguindo as instruções
+Você pode acessar o projeto em [https://calm-dolphin-66ff42.netlify.app/](https://teste-konatus.carlosgiongo.com.br/), ou iniciar o projeto localmente seguindo as instruções
 
 ```js
 git clone https://github.com/carlosgiongo/KONATUS_teste_pratico.git
@@ -22,4 +22,4 @@ Projeto desenvolvido usando dependencias nucleo:
 
 ### Video
 
-Video no próprio projeto, https://calm-dolphin-66ff42.netlify.app/video.mp4
+Video no próprio projeto, [https://calm-dolphin-66ff42.netlify.app](https://teste-konatus.carlosgiongo.com.br/)https://teste-konatus.carlosgiongo.com.br/video.mp4
