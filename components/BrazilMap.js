@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Tooltip from "@mui/material/Tooltip";
 import Popper from "@mui/material/Popper";
 import Typography from "@mui/material/Typography";
-import GetStates from "../utils/GetStates";
 
 const BrazilMap = props => {
   const [tooltip, setTooltip] = useState("");
