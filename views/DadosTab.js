@@ -54,11 +54,11 @@ const DadosTab = ({ statesFill }) => {
                     </Typography>
                     <Typography variant="h6">
                       Candidato A: {statesFill[state].candidato_a.porcentagem}%
-                      ({statesFill[state].candidato_a.votos} votos)
+                      ({statesFill[state].candidato_a.votos.length} votos)
                     </Typography>
                     <Typography variant="h6">
                       Candidato B: {statesFill[state].candidato_b.porcentagem}%
-                      ({statesFill[state].candidato_b.votos} votos)
+                      ({statesFill[state].candidato_b.votos.length} votos)
                     </Typography>
                   </Box>
                 );
@@ -96,11 +96,11 @@ const DadosTab = ({ statesFill }) => {
                     </Typography>
                     <Typography variant="h6">
                       Candidato A: {statesFill[state].candidato_a.porcentagem}%
-                      ({statesFill[state].candidato_a.votos} votos)
+                      ({statesFill[state].candidato_a.votos.length} votos)
                     </Typography>
                     <Typography variant="h6">
                       Candidato B: {statesFill[state].candidato_b.porcentagem}%
-                      ({statesFill[state].candidato_b.votos} votos)
+                      ({statesFill[state].candidato_b.votos.length} votos)
                     </Typography>
                   </Box>
                 );
@@ -138,11 +138,11 @@ const DadosTab = ({ statesFill }) => {
                     </Typography>
                     <Typography variant="h6">
                       Candidato A: {statesFill[state].candidato_a.porcentagem}%
-                      ({statesFill[state].candidato_a.votos} votos)
+                      ({statesFill[state].candidato_a.votos.length} votos)
                     </Typography>
                     <Typography variant="h6">
                       Candidato B: {statesFill[state].candidato_b.porcentagem}%
-                      ({statesFill[state].candidato_b.votos} votos)
+                      ({statesFill[state].candidato_b.votos.length} votos)
                     </Typography>
                   </Box>
                 );
@@ -180,11 +180,11 @@ const DadosTab = ({ statesFill }) => {
                     </Typography>
                     <Typography variant="h6">
                       Candidato A: {statesFill[state].candidato_a.porcentagem}%
-                      ({statesFill[state].candidato_a.votos} votos)
+                      ({statesFill[state].candidato_a.votos.length} votos)
                     </Typography>
                     <Typography variant="h6">
                       Candidato B: {statesFill[state].candidato_b.porcentagem}%
-                      ({statesFill[state].candidato_b.votos} votos)
+                      ({statesFill[state].candidato_b.votos.length} votos)
                     </Typography>
                   </Box>
                 );
@@ -222,11 +222,11 @@ const DadosTab = ({ statesFill }) => {
                     </Typography>
                     <Typography variant="h6">
                       Candidato A: {statesFill[state].candidato_a.porcentagem}%
-                      ({statesFill[state].candidato_a.votos} votos)
+                      ({statesFill[state].candidato_a.votos.length} votos)
                     </Typography>
                     <Typography variant="h6">
                       Candidato B: {statesFill[state].candidato_b.porcentagem}%
-                      ({statesFill[state].candidato_b.votos} votos)
+                      ({statesFill[state].candidato_b.votos.length} votos)
                     </Typography>
                   </Box>
                 );

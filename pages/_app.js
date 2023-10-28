@@ -6,22 +6,11 @@ import { DefaultSeo } from "next-seo";
 import NextNProgress from "nextjs-progressbar";
 import { TITLE, META_DESCRIPTION, META_IMAGE, URL } from "root/config";
 import ThemeProvider from "components/ThemeProvider";
-import * as gtag from "helpers/gtag";
 
 const App = ({ Component, pageProps }) => {
   if (typeof window === "undefined") {
     enableStaticRendering(true);
   }
-
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url);
-    };
-    Router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      Router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, []);
 
   return (
     <>

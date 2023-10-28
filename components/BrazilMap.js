@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Tooltip from "@mui/material/Tooltip";
 import Popper from "@mui/material/Popper";
 import Typography from "@mui/material/Typography";
 import GetStates from "../utils/GetStates";
 
-const BrazilMap = () => {
+const BrazilMap = props => {
   const [tooltip, setTooltip] = useState("");
   const [anchorEl, setAnchorEl] = useState(null);
-  const [statesFill, setStatesFill] = useState({ ...GetStates });
+  const [statesFill, setStatesFill] = useState(props.states);
   const [dadosEvidencia, setDadosEvidencia] = useState({
     candidato_a: {
       votos: 0,
@@ -30,11 +30,11 @@ const BrazilMap = () => {
 
     setDadosEvidencia({
       candidato_a: {
-        votos: statesFill[estado_sigla].candidato_a.votos,
+        votos: statesFill[estado_sigla].candidato_a.votos.length,
         porcentagem: statesFill[estado_sigla].candidato_a.porcentagem,
       },
       candidato_b: {
-        votos: statesFill[estado_sigla].candidato_b.votos,
+        votos: statesFill[estado_sigla].candidato_b.votos.length,
         porcentagem: statesFill[estado_sigla].candidato_b.porcentagem,
       },
     });
@@ -47,9 +47,31 @@ const BrazilMap = () => {
     setAnchorEl(null);
   };
 
+  const calcFill = () => {
+    const replica_states = { ...statesFill };
+    Object.keys(replica_states).map((state) => {
+      if (parseFloat(replica_states[state].candidato_a.porcentagem) > parseFloat(replica_states[state].candidato_b.porcentagem)) {
+        replica_states[state].fill = "red";
+      } else if (parseFloat(replica_states[state].candidato_a.porcentagem) < parseFloat(replica_states[state].candidato_b.porcentagem)) {
+        replica_states[state].fill = "blue";
+      } else {
+        replica_states[state].fill = "#7c7c7c";
+      }
+    });
+    setStatesFill(replica_states);
+  }
+
+  useEffect(() => {
+    if(props.updated != -1){
+      calcFill();
+    }
+  }, [props.updated]);
+
   return (
     <>
-      <svg
+      {props.states && (
+        <>
+        <svg
         baseprofile="tiny"
         fill="#7c7c7c"
         height="921"
@@ -309,16 +331,18 @@ const BrazilMap = () => {
 
               <div>
                 <Typography variant="body" color="initial">
-                  Candidato B: {dadosEvidencia.candidato_a.porcentagem}%
+                  Candidato B: {dadosEvidencia.candidato_b.porcentagem}%
                 </Typography>
                 <Typography variant="body2" color="initial">
-                  Votos: {dadosEvidencia.candidato_a.votos}
+                  Votos: {dadosEvidencia.candidato_b.votos}
                 </Typography>
               </div>
             </div>
           </div>
         </Tooltip>
       </Popper>
+      </>
+      )}
     </>
   );
 };
