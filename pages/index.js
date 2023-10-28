@@ -13,11 +13,18 @@ import FileInput from "../components/FileInput";
 import { useEffect, useState } from "react";
 import BrazilMap from "../components/BrazilMap";
 import GetStates from "../utils/GetStates";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
+import DadosTab from "../views/DadosTab";
+import Dashboard from "../views/Dashboard";
 
 const Index = () => {
   const [arquivoCenso, setArquivoCenso] = useState(null);
   const [arquivosPesquisa, setArquivosPesquisa] = useState(null);
   const [statesFill, setStatesFill] = useState({ ...GetStates });
+  const [value, setValue] = useState("1");
 
   const sombreamento = {
     boxShadow: "0px 9px 0px -1px rgba(0,0,0,0.06)",
@@ -25,10 +32,8 @@ const Index = () => {
     MozBoxShadow: "0px 9px 0px -1px rgba(0,0,0,0.06)",
   };
 
-  const sombreamentoCard = {
-    boxShadow: "10px 10px 5px 0px rgba(0,0,0,0.16)",
-    WebkitBoxShadow: "10px 10px 5px 0px rgba(0,0,0,0.16)",
-    MozBoxShadow: "10px 10px 5px 0px rgba(0,0,0,0.16)",
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
   };
 
   useEffect(() => {
@@ -106,7 +111,6 @@ const Index = () => {
             padding: `20px`,
             background: `#eae5e1`,
             borderRadius: `10px`,
-            ...sombreamentoCard,
           }}
         >
           <CardContent>
@@ -137,232 +141,23 @@ const Index = () => {
                 </Button>
               </Box>
             </Box>
-            <Box sx={{ marginTop: "30px" }}>
-              <Box
-                sx={{ display: "flex", flexDirection: "column", gap: "20px" }}
-              >
-                <Box>
-                  <Typography variant="h5">
-                    <b>SUL</b>
-                  </Typography>
-                  <Box
-                    sx={{
-                      marginTop: "20px",
-                      display: "flex",
-                      gap: "8px",
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    {Object.keys(statesFill).map((state) => {
-                      if (statesFill[state].regiao === "Sul") {
-                        return (
-                          <Box
-                            sx={{
-                              maxWidth: "320px",
-                              padding: "10px",
-                              borderRadius: "10px",
-                              borderStyle: "solid",
-                              borderWidth: "1px",
-                              ...sombreamentoCard,
-                            }}
-                          >
-                            <Typography variant="h6">
-                              {statesFill[state].nome}
-                            </Typography>
-                            <Typography variant="h6">
-                              Candidato A:{" "}
-                              {statesFill[state].candidato_a.porcentagem}% (
-                              {statesFill[state].candidato_a.votos} votos)
-                            </Typography>
-                            <Typography variant="h6">
-                              Candidato B:{" "}
-                              {statesFill[state].candidato_b.porcentagem}% (
-                              {statesFill[state].candidato_b.votos} votos)
-                            </Typography>
-                          </Box>
-                        );
-                      }
-                    })}
-                  </Box>
-                </Box>
-                <Box>
-                  <Typography variant="h5">
-                    <b>SUDESTE</b>
-                  </Typography>
-                  <Box
-                    sx={{
-                      marginTop: "20px",
-                      display: "flex",
-                      gap: "8px",
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    {Object.keys(statesFill).map((state) => {
-                      if (statesFill[state].regiao === "Sudeste") {
-                        return (
-                          <Box
-                            sx={{
-                              maxWidth: "320px",
-                              padding: "10px",
-                              borderRadius: "10px",
-                              borderStyle: "solid",
-                              borderWidth: "1px",
-                              ...sombreamentoCard,
-                            }}
-                          >
-                            <Typography variant="h6">
-                              {statesFill[state].nome}
-                            </Typography>
-                            <Typography variant="h6">
-                              Candidato A:{" "}
-                              {statesFill[state].candidato_a.porcentagem}% (
-                              {statesFill[state].candidato_a.votos} votos)
-                            </Typography>
-                            <Typography variant="h6">
-                              Candidato B:{" "}
-                              {statesFill[state].candidato_b.porcentagem}% (
-                              {statesFill[state].candidato_b.votos} votos)
-                            </Typography>
-                          </Box>
-                        );
-                      }
-                    })}
-                  </Box>
-                </Box>
-                <Box>
-                  <Typography variant="h5">
-                    <b>CENTRO-OESTE</b>
-                  </Typography>
-                  <Box
-                    sx={{
-                      marginTop: "20px",
-                      display: "flex",
-                      gap: "8px",
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    {Object.keys(statesFill).map((state) => {
-                      if (statesFill[state].regiao === "Centro-Oeste") {
-                        return (
-                          <Box
-                            sx={{
-                              maxWidth: "320px",
-                              padding: "10px",
-                              borderRadius: "10px",
-                              borderStyle: "solid",
-                              borderWidth: "1px",
-                              ...sombreamentoCard,
-                            }}
-                          >
-                            <Typography variant="h6">
-                              {statesFill[state].nome}
-                            </Typography>
-                            <Typography variant="h6">
-                              Candidato A:{" "}
-                              {statesFill[state].candidato_a.porcentagem}% (
-                              {statesFill[state].candidato_a.votos} votos)
-                            </Typography>
-                            <Typography variant="h6">
-                              Candidato B:{" "}
-                              {statesFill[state].candidato_b.porcentagem}% (
-                              {statesFill[state].candidato_b.votos} votos)
-                            </Typography>
-                          </Box>
-                        );
-                      }
-                    })}
-                  </Box>
-                </Box>
-                <Box>
-                  <Typography variant="h5">
-                    <b>Nordeste</b>
-                  </Typography>
-                  <Box
-                    sx={{
-                      marginTop: "20px",
-                      display: "flex",
-                      gap: "8px",
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    {Object.keys(statesFill).map((state) => {
-                      if (statesFill[state].regiao === "Nordeste") {
-                        return (
-                          <Box
-                            sx={{
-                              maxWidth: "320px",
-                              padding: "10px",
-                              borderRadius: "10px",
-                              borderStyle: "solid",
-                              borderWidth: "1px",
-                              ...sombreamentoCard,
-                            }}
-                          >
-                            <Typography variant="h6">
-                              {statesFill[state].nome}
-                            </Typography>
-                            <Typography variant="h6">
-                              Candidato A:{" "}
-                              {statesFill[state].candidato_a.porcentagem}% (
-                              {statesFill[state].candidato_a.votos} votos)
-                            </Typography>
-                            <Typography variant="h6">
-                              Candidato B:{" "}
-                              {statesFill[state].candidato_b.porcentagem}% (
-                              {statesFill[state].candidato_b.votos} votos)
-                            </Typography>
-                          </Box>
-                        );
-                      }
-                    })}
-                  </Box>
-                </Box>
-                <Box>
-                  <Typography variant="h5">
-                    <b>Norte</b>
-                  </Typography>
-                  <Box
-                    sx={{
-                      marginTop: "20px",
-                      display: "flex",
-                      gap: "8px",
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    {Object.keys(statesFill).map((state) => {
-                      if (statesFill[state].regiao === "Norte") {
-                        return (
-                          <Box
-                            sx={{
-                              maxWidth: "320px",
-                              padding: "10px",
-                              borderRadius: "10px",
-                              borderStyle: "solid",
-                              borderWidth: "1px",
-                              ...sombreamentoCard,
-                            }}
-                          >
-                            <Typography variant="h6">
-                              {statesFill[state].nome}
-                            </Typography>
-                            <Typography variant="h6">
-                              Candidato A:{" "}
-                              {statesFill[state].candidato_a.porcentagem}% (
-                              {statesFill[state].candidato_a.votos} votos)
-                            </Typography>
-                            <Typography variant="h6">
-                              Candidato B:{" "}
-                              {statesFill[state].candidato_b.porcentagem}% (
-                              {statesFill[state].candidato_b.votos} votos)
-                            </Typography>
-                          </Box>
-                        );
-                      }
-                    })}
-                  </Box>
-                </Box>
+
+            <TabContext value={value}>
+              <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                <TabList onChange={handleChange}>
+                  <Tab label="Dados" value="1" />
+                  <Tab label="Dashboard" value="2" />
+                  <Tab label="Video" value="3" />
+                </TabList>
               </Box>
-            </Box>
+              <TabPanel value="1">
+                <DadosTab statesFill={statesFill} />
+              </TabPanel>
+              <TabPanel value="2">
+                <Dashboard />
+              </TabPanel>
+              <TabPanel value="3">Item Three</TabPanel>
+            </TabContext>
           </CardContent>
         </Card>
       </Box>

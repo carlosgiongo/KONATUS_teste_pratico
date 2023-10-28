@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Tooltip from "@mui/material/Tooltip";
 import Popper from "@mui/material/Popper";
-import { Box } from "mdi-material-ui";
 import Typography from "@mui/material/Typography";
 import GetStates from "../utils/GetStates";
 
