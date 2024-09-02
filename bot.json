@@ -1,0 +1,89 @@
+[
+    {
+        "id": 1,
+        "tipo": "menu",
+        "bloco": "Menu Principal",
+        "opcoes": [
+            { "blocoId": 2, "nome": "1 - Validar Aposta" },
+            { "blocoId": 3, "nome": "2 - Depositar Saldo" },
+            { "blocoId": 4, "nome": "3 - Acessar Perfil" },
+            { "blocoId": 5, "nome": "4 - Como Funciona" },
+            { "blocoId": 6, "nome": "5 - Suporte" },
+            { "blocoId": 7, "nome": "6 - Bilhetes Prontos" },
+            { "blocoId": 8, "nome": "7 - Bônus" } 
+        ]
+    },
+    {
+        "id": 2,
+        "tipo": "acao", 
+        "bloco": "Validar Aposta"
+    },
+    {
+        "id": 3,
+        "tipo": "acao",
+        "bloco": "Depositar Saldo"
+    },
+    {
+        "id": 4,
+        "tipo": "menu",
+        "bloco": "Acessar Perfil",
+        "opcoes": [
+            { "blocoId": 9, "nome": "1 - Listar Apostas" },
+            { "blocoId": 10, "nome": "2 - Listar Depósitos" },
+            { "blocoId": 11, "nome": "3 - Listar Bônus" },
+            { "blocoId": 12, "nome": "4 - Listar Cashbacks" },
+            { "blocoId": 13, "nome": "5 - Saque" },
+            { "blocoId": 14, "nome": "6 - Cadastrar/Alterar Chave PIX" }
+        ]
+    },
+    {
+        "id": 5,
+        "tipo": "acao",
+        "bloco": "Como Funciona"
+    },
+    {
+        "id": 6,
+        "tipo": "acao",
+        "bloco": "Suporte"
+    },
+    {
+        "id": 7,
+        "tipo": "acao", 
+        "bloco": "Bilhetes Prontos"
+    },
+    {
+        "id": 8,
+        "tipo": "acao", 
+        "bloco": "Bônus"
+    },
+    {
+        "id": 9,
+        "tipo": "acao", 
+        "bloco": "Listar Apostas"
+    },
+    {
+        "id": 10,
+        "tipo": "acao", 
+        "bloco": "Listar Depósitos"
+    },
+    {
+        "id": 11,
+        "tipo": "acao", 
+        "bloco": "Listar Bônus"
+    },
+    {
+        "id": 12,
+        "tipo": "acao", 
+        "bloco": "Listar Cashbacks"
+    },
+    {
+        "id": 13,
+        "tipo": "acao", 
+        "bloco": "Saque"
+    },
+    {
+        "id": 14,
+        "tipo": "acao", 
+        "bloco": "Cadastrar/Alterar Chave PIX"
+    }
+]
